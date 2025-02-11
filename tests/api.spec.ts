@@ -1,6 +1,6 @@
 import { test, expect, request } from '@playwright/test';
 import { API_BASE_URL } from './configs/constants';
-
+import { CreateObjectRequest, ObjectResponse } from './common/api-spec';
 
 test.describe('REST API Tests', () => {
   let objectId: string;
@@ -14,25 +14,26 @@ test.describe('REST API Tests', () => {
     expect(Array.isArray(data)).toBeTruthy();
   });
 
-  test('2) Add object using POST', async ({ request }) => {
-    const newObject = {
-      name: 'Test Object',
-      data: { description: 'Testing Object with Playwright' }
-    };
+    
+  test('2) Add an object using POST', async ({ request }) => {
+    const objectData: CreateObjectRequest = {
+      name: "Apple MacBook Pro 16",
+      data: {}
+   };
 
     const response = await request.post(API_BASE_URL, {
-      data: newObject
-    });
-
+      data: objectData
+    });  
     expect(response.status()).toBe(200);
 
     const responseBody = await response.json();
     console.log('Created Object:', responseBody);
     
     expect(responseBody).toHaveProperty('id');
-    expect(responseBody.name).toBe(newObject.name);
+    expect(responseBody.name).toBe(objectData.name);
     objectId = responseBody.id;
   });
+
 
   test('3) Get a single object using above added ID', async ({ request }) => {
     console.log('Waiting for object to be available...');

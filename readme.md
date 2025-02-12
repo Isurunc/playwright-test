@@ -1,12 +1,13 @@
 # Playwright API Test Suite 
 
-This test suite contains Playwright tests to validate five API tests 
+This test suite contains Playwright tests to validate six API tests 
 
 1) Get list of all objects.
 2) Add an object using POST.
 3) Get a single object using the above added ID
 4) Update the object added in Step 2 using PUT
-5) Delete the object using DELETE.
+5) Partially update the object using PATCH
+6) Delete the object using DELETE.
 
 ## Prerequisites
 - Latest version of Node.js 18, 20 or 22.

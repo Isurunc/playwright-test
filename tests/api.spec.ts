@@ -1,6 +1,6 @@
 import { test, expect, request } from "@playwright/test";
 import { API_BASE_URL } from "./configs/constants";
-import { CreateObjectRequest, ObjectResponse } from "./common/spec";
+import { CreateObjectRequest } from "./common/spec";
 
 test.describe("REST API Tests", () => {
   let objectId: string;

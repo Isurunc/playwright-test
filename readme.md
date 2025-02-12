@@ -9,8 +9,8 @@ This test suite contains Playwright tests to validate five API tests
 5) Delete the object using DELETE.
 
 ## Prerequisites
-Latest version of Node.js 18, 20 or 22.
-https://playwright.dev/ installed. You can install it using the command `npm init playwright@latest`. It will install the latest version. 
+- Latest version of Node.js 18, 20 or 22.
+- https://playwright.dev/ installed. You can install it using the command `npm init playwright@latest`. It will install the latest version. 
 
 ## Running the Tests
 

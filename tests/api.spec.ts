@@ -43,6 +43,7 @@ test.describe("REST API Tests", () => {
     console.log("Fetched Object:", responseBody);
     expect(responseBody.id).toBe(objectId);
   });
+  
 
   test("4) Update the object using PUT", async ({ request }) => {
     const updatedData = {

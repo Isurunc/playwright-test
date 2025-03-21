@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
+ import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
@@ -36,7 +36,10 @@ export default defineConfig({
     video: 'retain-on-failure',
     headless: true,
     ignoreHTTPSErrors: true,
+    viewport: { width: 1920, height: 1080 },
   },
+
+ outputDir: 'test-results/',
 
   /* Configure projects for major browsers */
   projects: [
